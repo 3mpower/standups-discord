@@ -1,0 +1,67 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "standups-discord",
+  "title": "Standups Discord",
+  "description": "Let's you do standups and post directly to a specified discord channel using webhooks.",
+  "icon": "command-icon.png",
+  "author": "ayvee",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "index",
+      "title": "Write Update",
+      "subtitle": "Standups",
+      "description": "Share an update with your team",
+      "mode": "view",
+      "preferences": [
+        {
+          "name": "name",
+          "title": "Name",
+          "description": "Your name",
+          "placeholder": "Your Name",
+          "type": "textfield",
+          "required": true
+        },
+        {
+          "name": "pfp",
+          "title": "PFP",
+          "description": "URL to your profile picture",
+          "placeholder": "https://example.com/pfp.jpg",
+          "type": "textfield",
+          "required": true
+        },
+        {
+          "name": "webhook",
+          "title": "Web Hook",
+          "description": "Webhook URL to send message to Discord",
+          "placeholder": "https://discord.com/api/webhooks/123456789",
+          "type": "textfield",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.73.2",
+    "@raycast/utils": "^1.15.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "20.8.10",
+    "@types/react": "18.2.27",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
